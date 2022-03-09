@@ -3,8 +3,11 @@ import Counter from '../Counter';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
+// let getByTestId;
+
 // beforeEach(() => {
-//     const { getByTestId } = render(<Counter />);
+//     const component = render(<Counter />);
+//     getByTestId = component.getAllByTestId
 // })
 
 
