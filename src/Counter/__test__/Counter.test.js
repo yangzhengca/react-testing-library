@@ -3,16 +3,16 @@ import Counter from '../Counter';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-// let getByTestId;
+let getByTestId;
 
-// beforeEach(() => {
-//     const component = render(<Counter />);
-//     getByTestId = component.getAllByTestId
-// })
+beforeEach(() => {
+    const component = render(<Counter />);
+    getByTestId = component.getByTestId
+})
 
 
 test('header renders with correct text', () => {
-    const { getByTestId } = render(<Counter />);
+    // const { getByTestId } = render(<Counter />);
     const headerEl = getByTestId("header");
 
     expect(headerEl.textContent).toBe('My Counter');
@@ -20,7 +20,7 @@ test('header renders with correct text', () => {
 
 
 test('counter initally start with 0', () => {
-    const { getByTestId } = render(<Counter/>);
+    // const { getByTestId } = render(<Counter/>);
     const counterEl = getByTestId('counter');
 
     expect(counterEl.textContent).toBe("0");
@@ -28,28 +28,28 @@ test('counter initally start with 0', () => {
 
 
 test('input contains inital with 1', () => {
-    const { getByTestId } = render(<Counter/>);
+    // const { getByTestId } = render(<Counter/>);
     const inputEl = getByTestId('input');
 
     expect(inputEl.value).toBe('1');
 })
 
 test('add button renders with +', () => {
-    const { getByTestId } = render(<Counter/>);
+    // const { getByTestId } = render(<Counter/>);
     const addBtn = getByTestId('add-btn');
 
     expect(addBtn.textContent).toBe('+');
 })
 
 test('substrack button renders with -', () => {
-    const { getByTestId } = render(<Counter/>);
+    // const { getByTestId } = render(<Counter/>);
     const subBtn = getByTestId('add-sub');
 
     expect(subBtn.textContent).toBe('-');
 })
 
 test('change value of input works correctly', () => {
-    const { getByTestId } = render(<Counter/>);
+    // const { getByTestId } = render(<Counter/>);
     const inputEl = getByTestId('input');
 
     fireEvent.change(inputEl, {
@@ -63,7 +63,7 @@ test('change value of input works correctly', () => {
 })
 
 test('click on plus btn adds 1 to counter', () => {
-    const { getByTestId } = render(<Counter />);
+    // const { getByTestId } = render(<Counter />);
     const btnEl = getByTestId('add-btn');
     const counterEl = getByTestId('counter')
 
@@ -76,7 +76,7 @@ test('click on plus btn adds 1 to counter', () => {
 })
 
 test('click on substract btn substracts 1 to counter', () => {
-    const { getByTestId } = render(<Counter />);
+    // const { getByTestId } = render(<Counter />);
     const btnEl = getByTestId('add-sub');
     const counterEl = getByTestId('counter')
 
@@ -90,7 +90,7 @@ test('click on substract btn substracts 1 to counter', () => {
 
 
 test('changing input value then click btn add work correctly ', () => {
-    const { getByTestId } = render(<Counter />);
+    // const { getByTestId } = render(<Counter />);
     const btnEl = getByTestId('add-btn');
     const counterEl = getByTestId('counter')
     const inputEl = getByTestId('input')
@@ -109,7 +109,7 @@ test('changing input value then click btn add work correctly ', () => {
 
 
 test('changing input value then click substract btn work correctly ', () => {
-    const { getByTestId } = render(<Counter />);
+    // const { getByTestId } = render(<Counter />);
     const addSub = getByTestId('add-sub');
     const counterEl = getByTestId('counter')
     const inputEl = getByTestId('input')
@@ -128,7 +128,7 @@ test('changing input value then click substract btn work correctly ', () => {
 
 
 test('add and then substract leads to the correct number', () => {
-    const { getByTestId } = render(<Counter />);
+    // const { getByTestId } = render(<Counter />);
     const addSub = getByTestId('add-sub');
     const addBtn = getByTestId('add-btn');
     const counterEl = getByTestId('counter')
@@ -153,7 +153,7 @@ test('add and then substract leads to the correct number', () => {
 
 
 test('counter contains correct class name', () => {
-    const { getByTestId } = render(<Counter/>);
+    // const { getByTestId } = render(<Counter/>);
     const counterEl = getByTestId("counter");
     const inputEl = getByTestId("input");
     const addBtn = getByTestId("add-btn");
